@@ -4,9 +4,6 @@ const cors = require("cors");
 const app = express();
 const port = process.env.PORT || 5000;
 
-// vAY1xXzgXnL6ickX
-// warehouse
-
 const uri =
   "mongodb+srv://warehouse:vAY1xXzgXnL6ickX@cluster0.piqu1.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
 const client = new MongoClient(uri, {
@@ -64,7 +61,8 @@ async function run() {
       res.send(result);
     });
 
-    // delete
+    // delete api
+    //
 
     app.delete("/iteam/:id", async (req, res) => {
       const id = req.params.id;
