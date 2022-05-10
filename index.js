@@ -34,6 +34,15 @@ async function run() {
 
       res.send(cursor);
     });
+
+    // add iteam
+    app.post("/iteams", async (req, res) => {
+      const data = req.body;
+      const result = await itemCollection.insertOne(data);
+
+      res.send(result);
+    });
+    // update
     app.put("/iteam/:id", async (req, res) => {
       const id = req.params.id;
       const data = req.body;
