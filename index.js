@@ -63,6 +63,15 @@ async function run() {
       const result = await itemCollection.updateOne(filter, updateDoc, options);
       res.send(result);
     });
+
+    // delete
+
+    app.delete("/iteam/:id", async (req, res) => {
+      const id = req.params.id;
+      const filter = { _id: ObjectId(id) };
+      const result = await itemCollection.deleteOne(filter);
+      res.send(result);
+    });
   } finally {
   }
 }
