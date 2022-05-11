@@ -3,9 +3,10 @@ const { MongoClient, ServerApiVersion, ObjectId } = require("mongodb");
 const cors = require("cors");
 const app = express();
 const port = process.env.PORT || 5000;
+require('dotenv').config()
 
 const uri =
-  "mongodb+srv://warehouse:vAY1xXzgXnL6ickX@cluster0.piqu1.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+  `mongodb+srv://${process.env.USER_NAME}:${process.env.PASSWORD}@cluster0.piqu1.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
 const client = new MongoClient(uri, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
